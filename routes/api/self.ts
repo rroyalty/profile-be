@@ -16,21 +16,10 @@ router.get('/', async (req: Request, res: Response) => {
     try {
         const snoo = await new snoowrap(vars);
         const subreddit = snoo.getSubreddit('realEstate');
-        const topPosts = await subreddit.getTop({time: 'week', limit: 3});
-      
-        let data = [];
-      
-        topPosts.forEach((post) => {
-          data.push({
-            link: post.url,
-            text: post.title,
-            score: post.score
-          })
-        });
 
-        res.status(200).json(topPosts)
+        res.status(200).json(subreddit)
     } catch (err) {
-
+        console.log(err)
     }
 });
 
