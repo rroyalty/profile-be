@@ -18,7 +18,7 @@ router.get('/', async (req: Request, res: Response) => {
         const snoo = await new snoowrap(vars);
         const user = await snoo.getUser('rroyaltywebdev').getOverview();
         const subreddit = await snoo.getSubreddit(`u_rroyaltywebdev`).getNew()
-        res.status(200).json(subreddit)
+        res.status(200).json(subreddit[0])
     } catch (err) {
         console.log(err)
     }
