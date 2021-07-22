@@ -17,7 +17,7 @@ router.get('/', (req: Request, res: Response) => {
 
     const authUrl: string = snoowrap.getAuthUrl({
         clientId: process.env.CLIENT_ID!,
-        scope: [`account`, `identity`, `history`, `read`, `mysubreddits`, `modposts`, `modself`, `livemanage`, `wikiread`, ],
+        scope: [`account`, `identity`, `history`, `read`, `mysubreddits`, `modposts`, `modself`, `livemanage`, `wikiread` ],
         redirectUri: `https://www.reddit.com`,
         permanent: true,
         state: `abc123`
