@@ -9,13 +9,14 @@ const vars: SnoowrapOptions = {
     clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
     refreshToken: process.env.REFRESH_TOKEN,
+    accessToken: process.env.ACCESS_TOKEN
 };
 
 // TEST
 router.get('/', async (req: Request, res: Response) => {
     try {
         const snoo = await new snoowrap(vars);
-        const user = await snoo.getUser('rroyaltywebdev').getSubmissions();
+        const user = snoo.getUser('rroyaltywebdev')
         res.status(200).json(user)
     } catch (err) {
         console.log(err)
