@@ -9,7 +9,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node server.ts"
+    "start": "node server.js",
+    "postinstall": "tsc"
   },
   "repository": {
     "type": "git",
