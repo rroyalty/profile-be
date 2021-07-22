@@ -33,6 +33,17 @@ router.get('/newestTitle', async (req: Request, res: Response, next: NextFunctio
     }
 });
 
+// Newest Post Date
+router.get('/newestDate', async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const snoo = await new snoowrap(vars);
+        const subreddit = await snoo.getSubreddit(`u_rroyaltywebdev`).getNew()
+        res.status(200).json(subreddit[0].created)
+    } catch (err) {
+        console.log(err)
+    }
+});
+
 
 
 module.exports = router;
