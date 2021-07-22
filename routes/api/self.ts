@@ -12,26 +12,27 @@ const vars: SnoowrapOptions = {
 };
 
 // TEST
-router.get('/', (req: Request, res: Response) => {
+router.get('/', async (req: Request, res: Response) => {
 
+    // console.log(process.env.CLIENT_ID);
 
-    const authUrl: string = snoowrap.getAuthUrl({
-        clientId: process.env.CLIENT_ID!,
-        scope: [`account`, `identity`, `history`, `read`, `mysubreddits`, `modposts`, `modself`, `livemanage`, `wikiread`],
-        redirectUri: `https://www.reddit.com`,
-        permanent: true,
-        state: `abc123`
-    })
+    // const authUrl: string = snoowrap.getAuthUrl({
+    //     clientId: process.env.CLIENT_ID!,
+    //     scope: [`account`, `identity`, `history`, `read`, `mysubreddits`, `modposts`, `modself`, `livemanage`, `wikiread`],
+    //     redirectUri: `https://www.reddit.com`,
+    //     permanent: true,
+    //     state: `abc123`
+    // })
 
     res.status(200).json(authUrl)
     console.log(authUrl);
-    // try {
-    //     const snoo = await new snoowrap(vars);
-    //     const user = await snoo.getUser('rroyaltywebdev').link_karma
-    //     res.status(200).json(user)
-    // } catch (err) {
-    //     console.log(err)
-    // }
+    try {
+        const snoo = await new snoowrap(vars);
+        const user = await snoo.getUser('rroyaltywebdev').link_karma
+        res.status(200).json(user)
+    } catch (err) {
+        console.log(err)
+    }
 });
 
 
