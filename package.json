@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "back end profile",
   "main": "server.ts",
+  "engines": { "node": "14.17.3"},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node server.ts"
+    "start": "ts-node server.ts",
+    "postinstall": "tsc"
   },
   "repository": {
     "type": "git",
