@@ -12,7 +12,7 @@ const vars: SnoowrapOptions = {
 };
 
 // TEST
-router.get('/', async (req: Request, res: Response) => {
+router.get('/', (req: Request, res: Response) => {
 
 
     const authUrl: string = snoowrap.getAuthUrl({
