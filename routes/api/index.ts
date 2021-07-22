@@ -1,8 +1,8 @@
 import * as express from 'express'
-import { Router } from 'express'
+import { Router }from 'express'
 const router: Router = express.Router();
-import selfRoutes from './self'
+const selfRoutes = require('./self')
 
 router.use('/self', selfRoutes);
 
-export default router;
+module.exports = router;
