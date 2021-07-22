@@ -11,7 +11,7 @@ const vars: SnoowrapOptions = {
     refreshToken: process.env.REFRESH_TOKEN
 };
 
-// Newest Post
+// Newest Post Text
 router.get('/newestText', async (req: Request, res: Response) => {
     try {
         const snoo = await new snoowrap(vars);

@@ -4,8 +4,10 @@ const apiRoutes = require('./api/index')
 const htmlRoutes = require('./html/index')
 const router: Router = express.Router();
 
-router.use('/api', apiRoutes);
-router.use('/', htmlRoutes);
+import cors from '../utils/cors'
+
+router.use('/api', cors, apiRoutes);
+router.use('/', cors, htmlRoutes);
 
 router.use((req: Request, res: Response) => {
   res.send("<h1>Wrong Route!</h1>")
