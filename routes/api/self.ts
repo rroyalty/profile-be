@@ -1,5 +1,5 @@
 import * as express from 'express'
-import { Router, Request, Response } from 'express'
+import { Router, Request, Response, NextFunction } from 'express'
 const router: Router = express.Router();
 require('dotenv').config();
 import snoowrap, { SnoowrapOptions } from 'snoowrap'
@@ -12,7 +12,7 @@ const vars: SnoowrapOptions = {
 };
 
 // Newest Post Text
-router.get('/newestText', async (req: Request, res: Response) => {
+router.get('/newestText', async (req: Request, res: Response, next: NextFunction) => {
     try {
         const snoo = await new snoowrap(vars);
         const subreddit = await snoo.getSubreddit(`u_rroyaltywebdev`).getNew()
@@ -23,7 +23,7 @@ router.get('/newestText', async (req: Request, res: Response) => {
 });
 
 // Newest Post Title
-router.get('/newestTitle', async (req: Request, res: Response) => {
+router.get('/newestTitle', async (req: Request, res: Response, next: NextFunction) => {
     try {
         const snoo = await new snoowrap(vars);
         const subreddit = await snoo.getSubreddit(`u_rroyaltywebdev`).getNew()
