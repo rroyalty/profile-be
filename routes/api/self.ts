@@ -13,13 +13,24 @@ const vars: SnoowrapOptions = {
 
 // TEST
 router.get('/', async (req: Request, res: Response) => {
-    try {
-        const snoo = await new snoowrap(vars);
-        const user = await snoo.getUser('rroyaltywebdev').link_karma
-        res.status(200).json(user)
-    } catch (err) {
-        console.log(err)
-    }
+
+
+    const authUrl: string = snoowrap.getAuthUrl({
+        clientId: process.env.CLIENT_ID!,
+        scope: [`account`, `identity`, `history`, `read`, `mysubreddits`, `modposts`, `modself`, `livemanage`, `wikiread`, ],
+        redirectUri: `https://www.reddit.com`,
+        permanent: true,
+        state: `abc123`
+    })
+
+    window.location.href = authUrl;
+    // try {
+    //     const snoo = await new snoowrap(vars);
+    //     const user = await snoo.getUser('rroyaltywebdev').link_karma
+    //     res.status(200).json(user)
+    // } catch (err) {
+    //     console.log(err)
+    // }
 });
 
 
