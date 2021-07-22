@@ -24,8 +24,6 @@ router.get('/', async (req: Request, res: Response) => {
     //     state: `abc123`
     // })
 
-    res.status(200).json(authUrl)
-    console.log(authUrl);
     try {
         const snoo = await new snoowrap(vars);
         const user = await snoo.getUser('rroyaltywebdev').link_karma
