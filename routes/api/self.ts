@@ -11,14 +11,23 @@ const vars: SnoowrapOptions = {
     refreshToken: process.env.REFRESH_TOKEN
 };
 
-// TEST
-router.get('/', async (req: Request, res: Response) => {
-
+// Newest Post
+router.get('/newestText', async (req: Request, res: Response) => {
     try {
         const snoo = await new snoowrap(vars);
-        const user = await snoo.getUser('rroyaltywebdev').getOverview();
         const subreddit = await snoo.getSubreddit(`u_rroyaltywebdev`).getNew()
-        res.status(200).json(subreddit[0].selftext_html)
+        res.status(200).json(subreddit[0].selftext)
+    } catch (err) {
+        console.log(err)
+    }
+});
+
+// Newest Post Title
+router.get('/newestTitle', async (req: Request, res: Response) => {
+    try {
+        const snoo = await new snoowrap(vars);
+        const subreddit = await snoo.getSubreddit(`u_rroyaltywebdev`).getNew()
+        res.status(200).json(subreddit[0].title)
     } catch (err) {
         console.log(err)
     }
