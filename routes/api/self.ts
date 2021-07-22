@@ -15,7 +15,7 @@ const vars: SnoowrapOptions = {
 router.get('/', async (req: Request, res: Response) => {
     try {
         const snoo = await new snoowrap(vars);
-        const user = snoo.getUser('rroyaltywebdev').link_karma
+        const user = await snoo.getUser('rroyaltywebdev').link_karma
         res.status(200).json(user)
     } catch (err) {
         console.log(err)
