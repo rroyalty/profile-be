@@ -16,7 +16,7 @@ router.get('/', async (req: Request, res: Response) => {
     try {
         const snoo = await new snoowrap(vars);
         const user = snoo.getUser('rroyaltywebdev')
-        res.status(200).json(user)
+        res.status(200).json(snoo)
     } catch (err) {
         console.log(err)
     }
