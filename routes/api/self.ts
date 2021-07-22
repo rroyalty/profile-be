@@ -15,8 +15,8 @@ const vars: SnoowrapOptions = {
 router.get('/', async (req: Request, res: Response) => {
     try {
         const snoo = await new snoowrap(vars);
-        const subreddit = snoo.getSubreddit('realEstate');
-        res.status(200).json(subreddit)
+        const user = snoo.getUser('rroyaltywebdev').getSubmissions();
+        res.status(200).json(user)
     } catch (err) {
         console.log(err)
     }
