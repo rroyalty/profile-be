@@ -5,7 +5,7 @@ require('dotenv').config();
 import snoowrap, { SnoowrapOptions } from 'snoowrap'
 
 const vars: SnoowrapOptions = {
-    userAgent: process.env.USER_AGENT!,
+    userAgent: "portfolio",
     clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
     refreshToken: process.env.REFRESH_TOKEN
