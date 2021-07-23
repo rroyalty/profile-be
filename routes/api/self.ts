@@ -44,6 +44,17 @@ router.get('/newestDate', async (req: Request, res: Response, next: NextFunction
     }
 });
 
+// All Posts
+router.get('/allPosts', async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const snoo = await new snoowrap(vars);
+        const subreddit = await snoo.getSubreddit(`u_rroyaltywebdev`).getNew()
+        res.status(200).json(subreddit)
+    } catch (err) {
+        console.log(err)
+    }
+});
+
 
 
 module.exports = router;
