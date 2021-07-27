@@ -19,10 +19,10 @@ This app is an node/express server app that constitutes the back end of Ryan's p
 <a name="Technologies"></a>
 ### Technologies
 
-[Node](https://nodejs.dev/) 
-[Express](https://expressjs.com/) 
-[TypeScript](https://www.typescriptlang.org/) 
-[Snoowrap](https://not-an-aardvark.github.io/snoowrap/index.html)
+[Node](https://nodejs.dev/)  
+[Express](https://expressjs.com/)  
+[TypeScript](https://www.typescriptlang.org/)  
+[Snoowrap](https://not-an-aardvark.github.io/snoowrap/index.html)  
 
 ---
 <a name="License"></a>
