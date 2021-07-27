@@ -11,7 +11,7 @@
 <a name="Description"></a>
 ### Description
 
-This app is single page React app that constitutes the front end of Ryan's portfolio page. Not much to see here, the page speaks for itself.
+This app is an node/express server app that constitutes the back end of Ryan's portfolio page. Not much to see here, the page speaks for itself.
 
 ---
 <a name="Technologies"></a>
